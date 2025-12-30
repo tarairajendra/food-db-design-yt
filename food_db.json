@@ -2,7 +2,7 @@
   "id": "0",
   "name": "food_db",
   "createdAt": "2025-12-25T11:29:08.987Z",
-  "updatedAt": "2025-12-29T11:06:45.459Z",
+  "updatedAt": "2025-12-30T06:15:16.679Z",
   "databaseType": "mysql",
   "tables": [
     {
@@ -607,7 +607,7 @@
             "usageLevel": 1
           },
           "nullable": false,
-          "primaryKey": false,
+          "primaryKey": true,
           "unique": false,
           "createdAt": 1766752143119
         },
@@ -620,7 +620,7 @@
             "usageLevel": 1
           },
           "nullable": false,
-          "primaryKey": false,
+          "primaryKey": true,
           "unique": false,
           "createdAt": 1766752143119
         },
@@ -650,7 +650,19 @@
           "createdAt": 1766752143119
         }
       ],
-      "indexes": [],
+      "indexes": [
+        {
+          "id": "45",
+          "name": "pk_order_items_order_id_menu_id",
+          "fieldIds": [
+            "41",
+            "42"
+          ],
+          "unique": true,
+          "isPrimaryKey": true,
+          "createdAt": 1767074692383
+        }
+      ],
       "x": -288.713993536568,
       "y": -99.9807423258147,
       "color": "#8eb7ff",
@@ -660,13 +672,13 @@
       "parentAreaId": "fn67m767v7godhls7mdpwnjt4"
     },
     {
-      "id": "45",
+      "id": "46",
       "name": "order_assignments",
       "schema": "",
       "order": 5,
       "fields": [
         {
-          "id": "46",
+          "id": "47",
           "name": "order_id",
           "type": {
             "name": "int",
@@ -674,12 +686,12 @@
             "usageLevel": 1
           },
           "nullable": false,
-          "primaryKey": false,
+          "primaryKey": true,
           "unique": false,
           "createdAt": 1766752143119
         },
         {
-          "id": "47",
+          "id": "48",
           "name": "agent_id",
           "type": {
             "name": "int",
@@ -687,12 +699,12 @@
             "usageLevel": 1
           },
           "nullable": false,
-          "primaryKey": false,
+          "primaryKey": true,
           "unique": false,
           "createdAt": 1766752143119
         },
         {
-          "id": "48",
+          "id": "49",
           "name": "status",
           "type": {
             "name": "varchar",
@@ -709,7 +721,7 @@
           "characterMaximumLength": "10"
         },
         {
-          "id": "49",
+          "id": "50",
           "name": "assign_at",
           "type": {
             "name": "timestamp",
@@ -722,7 +734,7 @@
           "createdAt": 1766752143119
         },
         {
-          "id": "50",
+          "id": "51",
           "name": "pickup_at",
           "type": {
             "name": "timestamp",
@@ -735,7 +747,7 @@
           "createdAt": 1766752143119
         },
         {
-          "id": "51",
+          "id": "52",
           "name": "drop_at",
           "type": {
             "name": "timestamp",
@@ -748,7 +760,7 @@
           "createdAt": 1766752143119
         },
         {
-          "id": "52",
+          "id": "53",
           "name": "expected_drop_at",
           "type": {
             "name": "timestamp",
@@ -761,7 +773,19 @@
           "createdAt": 1766752143119
         }
       ],
-      "indexes": [],
+      "indexes": [
+        {
+          "id": "54",
+          "name": "pk_order_assignments_order_id_agent_id",
+          "fieldIds": [
+            "47",
+            "48"
+          ],
+          "unique": true,
+          "isPrimaryKey": true,
+          "createdAt": 1767074692383
+        }
+      ],
       "x": 63.46247368225977,
       "y": -383.47406885038674,
       "color": "#8eb7ff",
@@ -771,13 +795,13 @@
       "parentAreaId": "fn67m767v7godhls7mdpwnjt4"
     },
     {
-      "id": "53",
+      "id": "55",
       "name": "order_status",
       "schema": "",
       "order": 6,
       "fields": [
         {
-          "id": "54",
+          "id": "56",
           "name": "order_id",
           "type": {
             "name": "int",
@@ -785,12 +809,12 @@
             "usageLevel": 1
           },
           "nullable": false,
-          "primaryKey": false,
+          "primaryKey": true,
           "unique": false,
           "createdAt": 1767002122724
         },
         {
-          "id": "55",
+          "id": "57",
           "name": "status",
           "type": {
             "name": "varchar",
@@ -800,14 +824,14 @@
             },
             "usageLevel": 1
           },
-          "nullable": true,
-          "primaryKey": false,
+          "nullable": false,
+          "primaryKey": true,
           "unique": false,
           "createdAt": 1767002122724,
           "characterMaximumLength": "20"
         },
         {
-          "id": "56",
+          "id": "58",
           "name": "created_at",
           "type": {
             "name": "timestamp",
@@ -820,22 +844,35 @@
           "createdAt": 1767002122724
         }
       ],
-      "indexes": [],
+      "indexes": [
+        {
+          "id": "59",
+          "name": "pk_order_status_order_id_status",
+          "fieldIds": [
+            "56",
+            "57"
+          ],
+          "unique": true,
+          "isPrimaryKey": true,
+          "createdAt": 1767074587252
+        }
+      ],
       "x": 42.39905407584578,
       "y": -67.72470257880866,
       "color": "#8eb7ff",
       "isView": false,
       "createdAt": 1767002122724,
-      "parentAreaId": "fn67m767v7godhls7mdpwnjt4"
+      "parentAreaId": "fn67m767v7godhls7mdpwnjt4",
+      "diagramId": "dst0upfgwbxo"
     },
     {
-      "id": "57",
+      "id": "60",
       "name": "review",
       "schema": "",
       "order": 7,
       "fields": [
         {
-          "id": "58",
+          "id": "61",
           "name": "user_id",
           "type": {
             "name": "int",
@@ -843,12 +880,25 @@
             "usageLevel": 1
           },
           "nullable": false,
-          "primaryKey": false,
+          "primaryKey": true,
           "unique": false,
           "createdAt": 1767002122724
         },
         {
-          "id": "59",
+          "id": "62",
+          "name": "order_id",
+          "type": {
+            "name": "int",
+            "id": "int",
+            "usageLevel": 1
+          },
+          "nullable": false,
+          "primaryKey": true,
+          "unique": false,
+          "createdAt": 1767072906511
+        },
+        {
+          "id": "63",
           "name": "rest_id",
           "type": {
             "name": "int",
@@ -861,7 +911,7 @@
           "createdAt": 1767002122724
         },
         {
-          "id": "60",
+          "id": "64",
           "name": "agent_id",
           "type": {
             "name": "int",
@@ -874,7 +924,7 @@
           "createdAt": 1767002122724
         },
         {
-          "id": "61",
+          "id": "65",
           "name": "rating",
           "type": {
             "name": "double",
@@ -886,7 +936,7 @@
           "createdAt": 1767002122724
         },
         {
-          "id": "62",
+          "id": "66",
           "name": "comment",
           "type": {
             "name": "varchar",
@@ -903,61 +953,31 @@
           "characterMaximumLength": "200"
         }
       ],
-      "indexes": [],
+      "indexes": [
+        {
+          "id": "67",
+          "name": "pk_review_user_id_order_id",
+          "fieldIds": [
+            "61",
+            "62"
+          ],
+          "unique": true,
+          "isPrimaryKey": true,
+          "createdAt": 1767074692383
+        }
+      ],
       "x": -395.3542867402929,
       "y": -794.6409955212674,
       "color": "#8eb7ff",
       "isView": false,
-      "createdAt": 1767002122724
+      "createdAt": 1767002122724,
+      "diagramId": "dst0upfgwbxo",
+      "width": 224
     }
   ],
   "relationships": [
     {
-      "id": "63",
-      "name": "orders_user_id_fk",
-      "sourceTableId": "1",
-      "targetTableId": "32",
-      "sourceFieldId": "2",
-      "targetFieldId": "34",
-      "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767002228712
-    },
-    {
-      "id": "64",
-      "name": "restaurants_id_fk",
-      "sourceTableId": "14",
-      "targetTableId": "32",
-      "sourceFieldId": "15",
-      "targetFieldId": "35",
-      "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767002279484
-    },
-    {
-      "id": "65",
-      "name": "restaurants_id_fk",
-      "sourceTableId": "14",
-      "targetTableId": "24",
-      "sourceFieldId": "15",
-      "targetFieldId": "26",
-      "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767002474262
-    },
-    {
-      "id": "66",
-      "name": "orders_id_fk",
-      "sourceTableId": "32",
-      "targetTableId": "40",
-      "sourceFieldId": "33",
-      "targetFieldId": "41",
-      "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767002512049
-    },
-    {
-      "id": "67",
+      "id": "68",
       "name": "order_items_menu_id_fk",
       "sourceTableId": "24",
       "targetTableId": "40",
@@ -965,94 +985,162 @@
       "targetFieldId": "42",
       "sourceCardinality": "one",
       "targetCardinality": "one",
-      "createdAt": 1767002528278
-    },
-    {
-      "id": "68",
-      "name": "users_id_fk",
-      "sourceTableId": "1",
-      "targetTableId": "57",
-      "sourceFieldId": "2",
-      "targetFieldId": "58",
-      "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767002778871
+      "createdAt": 1767002528278,
+      "diagramId": "dst0upfgwbxo"
     },
     {
       "id": "69",
-      "name": "review_rest_id_fk",
-      "sourceTableId": "14",
-      "targetTableId": "57",
-      "sourceFieldId": "15",
-      "targetFieldId": "59",
+      "name": "orders_id_fk",
+      "sourceTableId": "32",
+      "targetTableId": "46",
+      "sourceFieldId": "33",
+      "targetFieldId": "47",
       "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767002888059
+      "targetCardinality": "one",
+      "createdAt": 1767003405846,
+      "diagramId": "dst0upfgwbxo"
     },
     {
       "id": "70",
-      "name": "users_id_fk",
-      "sourceTableId": "1",
-      "targetTableId": "57",
-      "sourceFieldId": "2",
-      "targetFieldId": "60",
+      "name": "orders_id_fk",
+      "sourceTableId": "32",
+      "targetTableId": "40",
+      "sourceFieldId": "33",
+      "targetFieldId": "41",
       "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767003021950
+      "targetCardinality": "one",
+      "createdAt": 1767002512049,
+      "diagramId": "dst0upfgwbxo"
     },
     {
       "id": "71",
       "name": "orders_id_fk",
       "sourceTableId": "32",
-      "targetTableId": "53",
+      "targetTableId": "55",
       "sourceFieldId": "33",
-      "targetFieldId": "54",
+      "targetFieldId": "56",
       "sourceCardinality": "one",
-      "targetCardinality": "many",
-      "createdAt": 1767003083743
+      "targetCardinality": "one",
+      "createdAt": 1767003083743,
+      "diagramId": "dst0upfgwbxo"
     },
     {
       "id": "72",
-      "name": "users_id_fk",
+      "name": "orders_user_id_fk",
       "sourceTableId": "1",
-      "targetTableId": "45",
+      "targetTableId": "32",
       "sourceFieldId": "2",
-      "targetFieldId": "47",
+      "targetFieldId": "34",
       "sourceCardinality": "one",
       "targetCardinality": "many",
-      "createdAt": 1767003244409
+      "createdAt": 1767002228712,
+      "diagramId": "dst0upfgwbxo"
     },
     {
       "id": "73",
-      "name": "orders_id_fk",
-      "sourceTableId": "32",
-      "targetTableId": "45",
-      "sourceFieldId": "33",
-      "targetFieldId": "46",
+      "name": "restaurants_id_fk",
+      "sourceTableId": "14",
+      "targetTableId": "24",
+      "sourceFieldId": "15",
+      "targetFieldId": "26",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1767002474262,
+      "diagramId": "dst0upfgwbxo"
+    },
+    {
+      "id": "74",
+      "name": "restaurants_id_fk",
+      "sourceTableId": "14",
+      "targetTableId": "32",
+      "sourceFieldId": "15",
+      "targetFieldId": "35",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1767002279484,
+      "diagramId": "dst0upfgwbxo"
+    },
+    {
+      "id": "75",
+      "name": "review_rest_id_fk",
+      "sourceTableId": "14",
+      "targetTableId": "60",
+      "sourceFieldId": "15",
+      "targetFieldId": "63",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1767002888059,
+      "diagramId": "dst0upfgwbxo"
+    },
+    {
+      "id": "76",
+      "name": "users_id_fk",
+      "sourceTableId": "1",
+      "targetTableId": "60",
+      "sourceFieldId": "2",
+      "targetFieldId": "64",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1767003021950,
+      "diagramId": "dst0upfgwbxo"
+    },
+    {
+      "id": "77",
+      "name": "users_id_fk",
+      "sourceTableId": "1",
+      "targetTableId": "46",
+      "sourceFieldId": "2",
+      "targetFieldId": "48",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1767003244409,
+      "diagramId": "dst0upfgwbxo"
+    },
+    {
+      "id": "78",
+      "name": "users_id_fk",
+      "sourceTableId": "1",
+      "targetTableId": "60",
+      "sourceFieldId": "2",
+      "targetFieldId": "61",
       "sourceCardinality": "one",
       "targetCardinality": "one",
-      "createdAt": 1767003405846
+      "createdAt": 1767002778871,
+      "diagramId": "dst0upfgwbxo"
+    },
+    {
+      "id": "79",
+      "name": "orders_id_fk",
+      "sourceTableId": "32",
+      "targetTableId": "60",
+      "sourceFieldId": "33",
+      "targetFieldId": "62",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1767073099459
     }
   ],
   "dependencies": [],
   "areas": [
     {
-      "id": "74",
-      "name": "Orders",
-      "x": -356.5673427154014,
-      "y": -434.80562031316055,
-      "width": 679,
-      "height": 540,
-      "color": "#b067e9"
-    },
-    {
-      "id": "75",
+      "id": "80",
       "name": "Restaurant",
       "x": -826.5673427154014,
       "y": -581.3918483261991,
       "width": 335,
       "height": 598,
-      "color": "#ffe374"
+      "color": "#ffe374",
+      "diagramId": "dst0upfgwbxo"
+    },
+    {
+      "id": "81",
+      "name": "Orders",
+      "x": -356.5673427154014,
+      "y": -434.80562031316055,
+      "width": 679,
+      "height": 540,
+      "color": "#b067e9",
+      "diagramId": "dst0upfgwbxo"
     }
   ],
   "customTypes": [],
