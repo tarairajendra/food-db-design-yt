@@ -54,6 +54,8 @@ create table if not exists orders (
 	payment_method enum('cash', 'upi', 'credit', 'debit') default 'cash',
 	amount double not null,
 	quantity int not null,
+	created_at timestamp default current_timestamp,
+	updated_at timestamp default current_timestamp on update current_timestamp,
 
 	primary key(id),
 	constraint fk_user_order foreign key(user_id) references users(id) on delete set null,
@@ -98,7 +100,7 @@ create table if not exists order_assignments (
 	constraint fk_agent_assignment foreign key(agent_id) references users(id) on delete cascade
 );
 
-create table if not exists review (
+create table if not exists reviews (
 	user_id int not null,
 	order_id int not null,
 	restaurant_id int,

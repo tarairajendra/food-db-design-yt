@@ -94,7 +94,7 @@ INSERT INTO order_assignments (order_id, agent_id, status, assign_at, pickup_at,
 (22, 10, 'assigned', '2023-11-04 14:00:00', NULL, NULL, '2023-11-04 14:45:00');
 
 -- 7. 20 Reviews
-INSERT INTO review (user_id, order_id, restaurant_id, agent_id, rating, comment) VALUES
+INSERT INTO reviews (user_id, order_id, restaurant_id, agent_id, rating, comment) VALUES
 (1, 1, 1, 8, 5, 'Best burger in Mumbai! Arrived hot and fresh.'),
 (2, 9, 1, 8, 4, 'Classic veggie burger was good, but fries were a bit salty.'),
 (4, 11, 1, 8, 5, 'The Double Cheese Burger is a must-try. Delivery was lightning fast.'),
@@ -138,3 +138,34 @@ INSERT INTO order_status (order_id, status, created_at) VALUES
 set foreign_key_checks = 1;
 
 COMMIT;
+
+-- updates
+
+update orders
+set created_at = created_at - interval 10 day
+where id = 5;
+
+update orders
+set created_at = created_at - interval 9 day
+where id = 6;
+
+update orders
+set created_at = created_at - interval 8 day
+where id = 7;
+
+update orders
+set created_at = created_at - interval 7 day
+where id = 8;
+
+update orders
+set created_at = created_at - interval 6 day
+where id = 9;
+
+update orders
+set created_at = created_at - interval 12 day
+where id = 10;
+
+
+insert into restaurants (name, address_city, address_state) values ('Odia Cuisin', 'Bhubaneswar', 'Odisha');
+
+update order_assignments set created_at = now() - interval 8 day where order_id = 1 and agent_id = 8;
