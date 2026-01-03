@@ -23,3 +23,14 @@ join order_assignments oas on o.id = oas.order_id
 where oas.status = 'delivered' 
 group by r.id;
 
+-- Q.2: Top-selling menu items this month
+select
+    mi.name as menu_item,
+    sum(oi.quantity) as total_quantity_sold,
+    count(o.id) as total_orders
+    from orders o
+    join order_items oi on o.id = oi.order_id
+    join menu_items mi on mi.id = oi.menu_id
+    where o.created_at >= date_format(current_date(), '%Y-%m-01')
+    group by oi.menu_id, mi.name
+    order by total_quantity_sold desc;
